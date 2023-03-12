@@ -95,6 +95,14 @@
     margin-top: 16px;
   }
 
+  .mse {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .card {
     all: unset;
     border-radius: 4px;
@@ -385,6 +393,30 @@
     </a>
 
   </div>
+
+  <h2>video</h2>
+  <app-vjs-player/>
+  <div class="mse" id="mse"></div>
+  <script src="https://unpkg.byted-static.com/xgplayer/2.31.2/browser/index.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+      let player = new Player({
+          id: "mse",
+          autoplay: false,
+          volume: 0.3,
+          airplay: true,
+          url: "http://10.100.100.11:5000/api/video",
+          playsinline: true,
+          height: window.innerHeight,
+          width: window.innerWidth,
+          networkState: true,
+          readyState: true,
+          pip: true,
+          download: true,
+          playbackRate: [0.5, 0.75, 1, 1.5, 2] 
+      })
+  </script>
+
 
   <!-- Next Steps -->
   <h2>Next Steps</h2>
