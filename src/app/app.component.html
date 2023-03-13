@@ -395,7 +395,7 @@
   </div>
 
   <h2>video</h2>
-  <app-vjs-player/>
+  <e-ngx-xgplayer [options]="playerOptions"/>
   <div class="mse" id="mse"></div>
   <script src="https://unpkg.byted-static.com/xgplayer/2.31.2/browser/index.js" type="text/javascript">
   </script>
@@ -413,7 +413,7 @@
           readyState: true,
           pip: true,
           download: true,
-          playbackRate: [0.5, 0.75, 1, 1.5, 2] 
+          playbackRate: [0.5, 0.75, 1, 1.5, 2]
       })
   </script>
 

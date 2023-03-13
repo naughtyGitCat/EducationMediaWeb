@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { XGPlayerOptions } from './xgplayer.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EducationMediaWeb';
+  playerOptions = {url: "http://s2.pstatp.com/cdn/expire-1-M/byted-player-videos/1.0.0/xgplayer-demo.mp4"};
 }
