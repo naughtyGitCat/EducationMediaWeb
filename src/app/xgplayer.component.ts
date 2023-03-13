@@ -288,12 +288,18 @@ export class XGPlayerOptions implements IPlayerOptions {
 	styleUrls: ['./xgplayer.component.scss']
 })
 export class ENgxXGPlayerComponent implements OnInit, OnDestroy {
+  // static - True to resolve query results before change detection runs
+
+  // https://blog.logrocket.com/understanding-the-viewchild-and-viewchildren-decorators-in-angular-10/
+  // The static property takes a boolean value and is optional.
+  //   By default, it is false.
+  //    If it is true, the view query is resolved before the complete competent view and data-bound properties are fully initialized.
+  //    If set to false, the view query is resolved after the component view and data-bound properties are completely initialized.
 	@ViewChild('playerElem', {static: true}) playerElemRef!: ElementRef
 	private player!: Player;
 	private defaultOptions!: IPlayerOptions;
 
 	@Input() set options(value: XGPlayerOptions) {
-    console.warn("@@@@@@@@@@@@@@@@@@@@@@@",this.playerElemRef)
 		this.defaultOptions = {
 			el: this.playerElemRef.nativeElement,
       url: value.url
@@ -328,7 +334,6 @@ export class ENgxXGPlayerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-    console.warn("@@@@@@@@@@@@@@@@@@@@@@@",this.playerElemRef)
 		this.player = new Player(this.defaultOptions);
 		this.initEvents();
 	}
