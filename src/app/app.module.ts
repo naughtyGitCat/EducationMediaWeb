@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ENgxXGPlayerComponent } from './xgplayer.component';
-import { ENgxXGPlayerModule } from './xgplayer.module';
+import { ENgxXGPlayerModule } from './modules/xgplayer/xgplayer.module';
+import { FirstComponent } from './first/first.component';
+import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FirstComponent,
+    VideoDetailComponent
   ],
   imports: [
     BrowserModule,
