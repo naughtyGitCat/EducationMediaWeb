@@ -9,7 +9,6 @@ import { XGPlayerOptions } from './modules/xgplayer/xgplayer.component';
 export class AppComponent {
   name?: string;
   title = 'EducationMediaWeb';
-  playerOptions = {url: "http://s2.pstatp.com/cdn/expire-1-M/byted-player-videos/1.0.0/xgplayer-demo.mp4"};
 
   constructor(
     private route: ActivatedRoute,
