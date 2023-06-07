@@ -4,36 +4,14 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { FirstComponent } from './first/first.component';
 import { DetailComponent } from './modules/video/detail/detail.component';
 import { ListComponent } from './modules/video/list/list.component';
-import {VideoDetailComponent} from "./pages/video/detail/detail.component";
-import {VideoListComponent} from "./pages/video/list/list.component";
-import {VideoUploadComponent} from "./pages/video/upload/upload.component";
+import {VideoSubRoute} from "./pages/video/video-routing.module";
 
 const resolvedVideoDetailTitle: ResolveFn<string> = () => Promise.resolve('video detail');
 
 const routes: Routes = [
   {path: 'first-component', component: FirstComponent, title: 'First Component'},
   {path: '', redirectTo: '/first-component', pathMatch: 'full'},
-  {
-    path: 'video',
-    title: '视频',
-    children: [
-      {
-        path: 'list',
-        title: '列表',
-        component: VideoListComponent
-      },
-      {
-        path: 'detail',
-        title: '详情',
-        component: VideoDetailComponent
-      },
-      {
-        path: 'upload',
-        title: '上传',
-        component: VideoUploadComponent
-      },
-    ]
-  },
+  VideoSubRoute,
   {
     path: 'user',
     title: 'user component',
@@ -55,7 +33,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {bindToComponentInputs: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

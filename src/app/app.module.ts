@@ -13,6 +13,9 @@ import { VideoComponent } from './pages/video/video.component';
 import {VideoDetailComponent} from './pages/video/detail/detail.component';
 import { VideoListComponent } from './pages/video/list/list.component';
 import { VideoUploadComponent } from './pages/video/upload/upload.component';
+import { HomeComponent } from './pages/misc/home/home.component';
+import {MatTableModule} from "@angular/material/table";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +25,16 @@ import { VideoUploadComponent } from './pages/video/upload/upload.component';
     VideoComponent,
     VideoListComponent,
     VideoDetailComponent,
-    VideoUploadComponent
+    VideoUploadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ENgxXGPlayerModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

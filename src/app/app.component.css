@@ -1,0 +1,13 @@
+.toolbar .material-symbols-outlined {
+  /*height: 40px;*/
+  width: auto;
+  margin: 0 8px;
+}
+.toolbar .material-symbols-outlined:hover {
+  opacity: 0.8;
+}
+
+.toolbar .icon-bigger {
+  margin: 0 8px;
+  transform: scale(1.5);
+}
